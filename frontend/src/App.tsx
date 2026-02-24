@@ -5,7 +5,7 @@ import './App.css';
 function App() {
   return (
     <BrowserRouter>
-      <div className="min-h-screen bg-background max-w-md mx-auto">
+      <div className="min-h-screen w-full max-w-xl mx-auto bg-background flex flex-col items-center">
         <Routes>
           <Route path="/" element={<Index />} />
         </Routes>
