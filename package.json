@@ -1,0 +1,11 @@
+{
+  "name": "gomacro",
+  "private": true,
+  "scripts": {
+    "install:frontend": "cd frontend && npm install",
+    "postinstall": "npm run install:frontend",
+    "dev": "cd frontend && npm run dev",
+    "build": "cd frontend && npm run build",
+    "preview": "cd frontend && npm run preview"
+  }
+}
