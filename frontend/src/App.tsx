@@ -9,6 +9,7 @@ import Profile from './pages/Profile';
 import Recommendation from './pages/Recommendation';
 import Scan from './pages/Scan';
 import SignUp from './pages/SignUp';
+import Track from './pages/Track';
 import Welcome from './pages/Welcome';
 import './App.css';
 
@@ -40,6 +41,7 @@ function App() {
           <Route path="/recommendation" element={<Recommendation />} />
           <Route path="/scan" element={<Scan />} />
           <Route path="/nearby" element={<Nearby />} />
+          <Route path="/track" element={<Track />} />
           <Route path="/profile" element={<Profile />} />
           <Route path="*" element={<Navigate to="/" replace />} />
         </Routes>
