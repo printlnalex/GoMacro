@@ -1,4 +1,5 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { Toaster } from 'sonner';
 import BottomNav from './components/BottomNav';
 import Index from './pages/Index';
 import Profile from './pages/Profile';
@@ -8,6 +9,7 @@ import './App.css';
 function App() {
   return (
     <BrowserRouter>
+      <Toaster position="top-center" />
       <div className="min-h-screen w-full max-w-xl mx-auto bg-background flex flex-col items-center pb-16">
         <Routes>
           <Route path="/" element={<Index />} />

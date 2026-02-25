@@ -1,9 +1,11 @@
 import { Flame, BatteryLow, BatteryMedium, ChefHat, User } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 import EnergyButton from '../components/EnergyButton';
+import { useStreak } from '../hooks/useStreak';
 
 function Index() {
   const navigate = useNavigate();
+  const { streak } = useStreak();
   return (
     <main className="min-h-screen w-full max-w-xl mx-auto bg-background px-4 pb-8 pt-6 flex flex-col items-center">
       <header className="mb-6 flex w-full max-w-xl items-start justify-between gap-4">
@@ -14,7 +16,7 @@ function Index() {
             </span>
             <div>
               <p className="text-sm font-medium text-stone-600">Streak</p>
-              <p className="text-lg font-bold text-stone-900">7 days</p>
+              <p className="text-lg font-bold text-stone-900">{streak} {streak === 1 ? 'day' : 'days'}</p>
             </div>
           </div>
           <p className="rounded-lg bg-stone-100 px-3 py-2 text-sm text-stone-700">

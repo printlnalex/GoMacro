@@ -1,4 +1,6 @@
 import { useState, useCallback } from 'react';
+import { toast } from 'sonner';
+import { useStreak } from '../hooks/useStreak';
 
 type Recipe = {
   name: string;
@@ -31,6 +33,7 @@ const MOCK_RECIPES: Recipe[] = [
 function Recommendation() {
   const [index, setIndex] = useState(0);
   const recipe = MOCK_RECIPES[index];
+  const { incrementStreak } = useStreak();
 
   const shuffle = useCallback(() => {
     const others = MOCK_RECIPES.map((_, i) => i).filter((i) => i !== index);
@@ -39,8 +42,9 @@ function Recommendation() {
   }, [index]);
 
   const accept = useCallback(() => {
-    console.log('Accepted');
-  }, []);
+    incrementStreak();
+    toast.success('Meal logged! Streak +1');
+  }, [incrementStreak]);
 
   return (
     <main className="flex min-h-screen w-full max-w-xl flex-col items-center justify-center gap-8 px-4 py-8">
