@@ -1,11 +1,10 @@
-import { BarChart3, Camera, Home, MapPin } from 'lucide-react';
+import { Camera, Home, MapPin } from 'lucide-react';
 import { NavLink } from 'react-router-dom';
 
 const navItems = [
-  { to: '/', icon: Home, label: 'Home' },
   { to: '/scan', icon: Camera, label: 'Scan' },
+  { to: '/', icon: Home, label: 'Home' },
   { to: '/nearby', icon: MapPin, label: 'Nearby' },
-  { to: '/track', icon: BarChart3, label: 'Track' },
 ];
 
 function BottomNav() {
