@@ -2,8 +2,10 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { Toaster } from 'sonner';
 import BottomNav from './components/BottomNav';
 import Index from './pages/Index';
+import Nearby from './pages/Nearby';
 import Profile from './pages/Profile';
 import Recommendation from './pages/Recommendation';
+import Scan from './pages/Scan';
 import './App.css';
 
 function App() {
@@ -14,6 +16,8 @@ function App() {
         <Routes>
           <Route path="/" element={<Index />} />
           <Route path="/recommendation" element={<Recommendation />} />
+          <Route path="/scan" element={<Scan />} />
+          <Route path="/nearby" element={<Nearby />} />
           <Route path="/profile" element={<Profile />} />
         </Routes>
         <BottomNav />

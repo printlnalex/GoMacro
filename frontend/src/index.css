@@ -2,6 +2,7 @@
 
 @theme {
   --color-background: #fafaf9;
+  --color-card: #ffffff;
 }
 
 :root {

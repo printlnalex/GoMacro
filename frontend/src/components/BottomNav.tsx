@@ -1,19 +1,19 @@
-import { Home, Shuffle, User } from 'lucide-react';
+import { Camera, Home, MapPin } from 'lucide-react';
 import { NavLink } from 'react-router-dom';
 
 const navItems = [
   { to: '/', icon: Home, label: 'Home' },
-  { to: '/recommendation', icon: Shuffle, label: 'Shuffle' },
-  { to: '/profile', icon: User, label: 'Profile' },
+  { to: '/scan', icon: Camera, label: 'Scan' },
+  { to: '/nearby', icon: MapPin, label: 'Nearby' },
 ];
 
 function BottomNav() {
   return (
     <nav
-      className="fixed bottom-0 left-0 right-0 z-10 border-t border-stone-200 bg-white/95 backdrop-blur supports-[backdrop-filter]:bg-white/80"
+      className="fixed bottom-0 left-0 right-0 z-10 w-full max-w-md mx-auto border-t border-stone-200 bg-card"
       aria-label="Main navigation"
     >
-      <div className="mx-auto flex h-14 max-w-xl items-center justify-around">
+      <div className="flex h-14 items-center justify-around">
         {navItems.map(({ to, icon: Icon, label }) => (
           <NavLink
             key={to}
