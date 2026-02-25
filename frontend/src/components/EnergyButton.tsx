@@ -19,15 +19,15 @@ function EnergyButton({ label, icon: Icon, description, variant = 'medium', onCl
     <button
       type="button"
       onClick={onClick}
-      className={`flex w-full items-center gap-3 rounded-xl border-2 px-4 py-3 text-left transition-colors ${variantStyles[variant]}`}
+      className={`flex w-full items-center gap-4 rounded-2xl border-2 px-5 py-4 text-left transition-colors ${variantStyles[variant]}`}
     >
-      <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-white/80 text-current">
-        <Icon className="h-5 w-5 shrink-0" aria-hidden />
+      <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-white/80 text-current">
+        <Icon className="h-6 w-6 shrink-0" aria-hidden />
       </span>
       <span className="min-w-0 flex-1">
-        <span className="font-semibold">{label}</span>
+        <span className="text-base font-semibold">{label}</span>
         {description && (
-          <span className="mt-0.5 block text-sm opacity-80">{description}</span>
+          <span className="mt-1 block text-base opacity-80">{description}</span>
         )}
       </span>
     </button>
