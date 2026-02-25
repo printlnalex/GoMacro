@@ -5,6 +5,7 @@ type EnergyButtonProps = {
   icon: LucideIcon;
   description?: string;
   variant?: 'low' | 'medium' | 'chef';
+  onClick?: () => void;
 };
 
 const variantStyles = {
@@ -13,10 +14,11 @@ const variantStyles = {
   chef: 'border-orange-200 bg-orange-50 text-orange-900 hover:bg-orange-100',
 };
 
-function EnergyButton({ label, icon: Icon, description, variant = 'medium' }: EnergyButtonProps) {
+function EnergyButton({ label, icon: Icon, description, variant = 'medium', onClick }: EnergyButtonProps) {
   return (
     <button
       type="button"
+      onClick={onClick}
       className={`flex w-full items-center gap-3 rounded-xl border-2 px-4 py-3 text-left transition-colors ${variantStyles[variant]}`}
     >
       <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-white/80 text-current">

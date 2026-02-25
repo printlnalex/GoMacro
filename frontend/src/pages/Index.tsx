@@ -1,7 +1,9 @@
 import { Flame, BatteryLow, BatteryMedium, ChefHat, User } from 'lucide-react';
+import { useNavigate } from 'react-router-dom';
 import EnergyButton from '../components/EnergyButton';
 
 function Index() {
+  const navigate = useNavigate();
   return (
     <main className="min-h-screen w-full max-w-xl mx-auto bg-background px-4 pb-8 pt-6 flex flex-col items-center">
       <header className="mb-6 flex w-full max-w-xl items-start justify-between gap-4">
@@ -37,18 +39,21 @@ function Index() {
           icon={BatteryLow}
           description="Need a boost"
           variant="low"
+          onClick={() => navigate('/recommendation')}
         />
         <EnergyButton
           label="Medium"
           icon={BatteryMedium}
           description="Steady and good"
           variant="medium"
+          onClick={() => navigate('/recommendation')}
         />
         <EnergyButton
           label="Chef Mode"
           icon={ChefHat}
           description="Ready to crush it"
           variant="chef"
+          onClick={() => navigate('/recommendation')}
         />
       </section>
     </main>
