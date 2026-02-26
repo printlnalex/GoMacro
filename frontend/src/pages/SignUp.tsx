@@ -12,7 +12,7 @@ function SignUp() {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     signUp(email, password, name);
-    navigate('/', { replace: true });
+    navigate('/onboarding', { replace: true });
   };
 
   return (
