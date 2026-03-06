@@ -1,4 +1,5 @@
 import { useState, useCallback } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { toast } from 'sonner';
 import { useStreak } from '../hooks/useStreak';
 
@@ -70,6 +71,7 @@ const MOCK_RECIPES: Recipe[] = [
 ];
 
 function Recommendation() {
+  const navigate = useNavigate();
   const [index, setIndex] = useState(0);
   const recipe = MOCK_RECIPES[index];
   const { incrementStreak } = useStreak();
@@ -83,10 +85,11 @@ function Recommendation() {
   const accept = useCallback(() => {
     incrementStreak();
     toast.success('Meal logged! Streak +1');
-  }, [incrementStreak]);
+    navigate('/', { replace: true });
+  }, [incrementStreak, navigate]);
 
   return (
-    <main className="flex min-h-screen w-full max-w-xl flex-col gap-6 px-4 py-8">
+    <main className="flex min-h-screen w-full max-w-md mx-auto flex-col gap-6 px-4 py-8">
       <h1 className="text-lg font-semibold text-stone-700">Shuffle food</h1>
 
       <div key={index} className="recipe-card-entering w-full max-w-sm overflow-hidden rounded-2xl border border-stone-200 bg-white shadow-sm">
